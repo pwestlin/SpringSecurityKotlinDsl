@@ -6,6 +6,6 @@ The application has the following endpoints:
 
 endpoint | description | roles
 --- | --- | ---
-/ | greets | *everyone*
-/greetings | greets | USER, ADMIN
-/greetings/{greeting} | greets | ADMIN
+/ | greets logged in user or anonymous if not logged in| *everyone*
+/greetings | greets logged in user | USER, ADMIN
+/greetings/{greeting} | changes the default greeting to {greeting} | ADMIN
