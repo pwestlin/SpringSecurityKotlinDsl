@@ -38,7 +38,7 @@ class GreetingRepository {
 
 fun routes(greetingRepository: GreetingRepository) = router {
 
-    GET("/") {request ->
+    GET("/") { request ->
         val username = request.principal().map { it.name }.orElse("anonymous")
         ServerResponse.ok().body(mapOf("greeting" to "${greetingRepository.greeting}, $username"))
     }
@@ -72,6 +72,6 @@ fun main(args: Array<String>) {
             }
 
             bean(::routes)
-       })
+        })
     }
 }
